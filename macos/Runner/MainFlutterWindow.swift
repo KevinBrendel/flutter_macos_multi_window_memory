@@ -14,7 +14,6 @@ class MainFlutterWindow: NSWindow {
         self.setFrame(windowFrame, display: true)
         
         let methodChannel = FlutterMethodChannel(name: "com.example/multi_window", binaryMessenger: flutterViewController.engine.binaryMessenger)
-        
         methodChannel.setMethodCallHandler(methodCallHandler)
         
         RegisterGeneratedPlugins(registry: flutterViewController)
