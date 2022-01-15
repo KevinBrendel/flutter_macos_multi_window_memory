@@ -30,11 +30,9 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  static const multiWindowChannel = MethodChannel('com.example/multi_window');
   int _counter = 0;
 
   void _incrementCounter() async {
-    await multiWindowChannel.invokeMethod('newWindow');
     setState(() {
       _counter++;
     });
@@ -62,7 +60,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
-        tooltip: 'New Window',
+        tooltip: 'Increment Counter',
         child: const Icon(Icons.add),
       ),
     );
